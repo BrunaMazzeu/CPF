@@ -9,42 +9,58 @@
             height: 100vh;
             justify-content: center;
             align-items: center;
-            background-color: #ffe6f2;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             font-family: Arial, sans-serif;
         }
-        .container {
-            background-color: #f5e1ff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .container, .resultado {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
+            width: 100%;
+            max-width: 350px;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .resultado {
+            display: none;
         }
         input[type="text"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-top: 10px;
-            border: 1px solid #dba0d6;
-            border-radius: 5px;
+            border: 2px solid #dba0d6;
+            border-radius: 8px;
         }
         button {
             background-color: #d63384;
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 8px;
             cursor: pointer;
-            margin-top: 10px;
-        }
-        .mensagem {
             margin-top: 15px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #b82e6e;
+        }
+        .resultado img {
+            width: 100px;
+            margin: 10px 0;
+        }
+        .resultado p {
+            font-weight: bold;
             color: #d63384;
-            display: none;
         }
     </style>
     <script>
         function mostrarMensagem() {
-            const mensagem = document.getElementById("mensagem");
-            mensagem.style.display = "block";
+            const container = document.querySelector(".container");
+            const resultado = document.getElementById("resultado");
+
+            container.style.display = "none";
+            resultado.style.display = "block";
         }
     </script>
 </head>
@@ -54,7 +70,13 @@
         <p>Autorizado por Ana Bia</p>
         <input type="text" id="cpfInput" placeholder="Digite seu CPF" maxlength="14">
         <button onclick="mostrarMensagem()">Reativar</button>
-        <p id="mensagem" class="mensagem">Necessário a autorização da Ana Bia.</p>
+    </div>
+
+    <div id="resultado" class="resultado">
+        <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="CPF Reativado">
+        <p>CPF atualizado com sucesso!</p>
+        <img src="https://img.cdndsgni.com/preview/10058488.jpg" alt="Energético Liberado">
+        <p>Agora você pode comprar seu energético!</p>
     </div>
 </body>
 </html>
