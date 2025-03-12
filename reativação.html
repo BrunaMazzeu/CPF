@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reativação de CPF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffe6f2;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #f5e1ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #dba0d6;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #d63384;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .mensagem {
+            margin-top: 15px;
+            color: #d63384;
+            display: none;
+        }
+    </style>
+    <script>
+        function mostrarMensagem() {
+            const mensagem = document.getElementById("mensagem");
+            mensagem.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Reativação de CPF</h2>
+        <p>Autorizado por Ana Bia</p>
+        <input type="text" id="cpfInput" placeholder="Digite seu CPF" maxlength="14">
+        <button onclick="mostrarMensagem()">Reativar</button>
+        <p id="mensagem" class="mensagem">Necessário a autorização da Ana Bia.</p>
+    </div>
+</body>
+</html>
+
